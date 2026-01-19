@@ -10,33 +10,38 @@
         :root { --primary: #1a5f7a; --accent: #d9534f; --bg: #f4f7f6; }
         body { font-family: 'Assistant', sans-serif; margin: 0; background-color: var(--bg); color: #333; line-height: 1.8; }
         header { background: #fff; padding: 20px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .logo { max-width: 150px; height: auto; }
+        .logo { max-width: 180px; height: auto; }
         
-        .container { max-width: 900px; margin: 20px auto; padding: 20px; display: grid; grid-template-columns: 3fr 1fr; gap: 30px; }
-        @media (max-width: 768px) { .container { grid-template-columns: 1fr; } .side-quote { display: none; } }
+        .container { max-width: 1000px; margin: 20px auto; padding: 20px; display: grid; grid-template-columns: 3fr 1fr; gap: 30px; }
+        @media (max-width: 850px) { .container { grid-template-columns: 1fr; } .side-quote { display: none; } }
 
         .main-content { background: #fff; padding: 40px; border-radius: 15px; box-shadow: 0 4px 25px rgba(0,0,0,0.05); }
-        .article-image { width: 100%; border-radius: 12px; margin-bottom: 25px; }
+        .article-image { width: 100%; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         
-        h1 { font-family: 'Suez One', serif; color: var(--primary); font-size: 2.8em; margin-bottom: 10px; }
-        .meta { color: var(--accent); font-weight: bold; margin-bottom: 30px; display: flex; align-items: center; gap: 10px; }
+        h1 { font-family: 'Suez One', serif; color: var(--primary); font-size: 3em; margin-bottom: 10px; line-height: 1.2; }
+        .meta { color: var(--accent); font-weight: bold; margin-bottom: 30px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
         
-        h2 { color: var(--primary); border-right: 4px solid var(--primary); padding-right: 15px; margin-top: 40px; font-size: 1.8em; }
-        .vector-icon { font-size: 1.2em; margin-left: 10px; color: var(--primary); }
+        h2 { color: var(--primary); border-right: 5px solid var(--primary); padding-right: 15px; margin-top: 45px; font-size: 1.8em; font-family: 'Suez One', serif; }
+        .vector-icon { font-size: 1.1em; margin-left: 10px; color: var(--primary); }
         
-        .side-quote { font-family: 'Suez One', serif; font-size: 1.5em; color: var(--primary); padding: 20px; border-right: 2px solid #ddd; height: fit-content; sticky: top; top: 20px; }
+        .side-quote { font-family: 'Suez One', serif; font-size: 1.8em; color: var(--primary); padding: 20px; border-right: 3px solid var(--primary); height: fit-content; position: sticky; top: 40px; line-height: 1.4; background: #fff; border-radius: 0 10px 10px 0; }
         
-        .source-box { background: #f9f9f9; border: 1px dashed #ccc; padding: 25px; margin: 30px 0; font-family: 'Georgia', serif; font-style: italic; font-size: 1.1em; line-height: 1.6; }
+        .source-box { background: #f0f4f8; border-right: 6px solid var(--primary); padding: 30px; margin: 40px 0; font-family: 'Assistant', sans-serif; font-weight: 400; font-size: 1.15em; line-height: 1.7; color: #2c3e50; border-radius: 5px; }
         
-        .image-caption { text-align: center; font-size: 0.9em; color: #666; margin-top: -15px; margin-bottom: 25px; }
-        .inner-img { width: 100%; border-radius: 10px; margin: 20px 0; }
+        .image-caption { text-align: center; font-size: 0.95em; color: #666; margin-top: -15px; margin-bottom: 30px; font-style: italic; }
+        .inner-img { width: 100%; border-radius: 10px; margin: 30px 0 15px 0; }
 
-        .share-bar { display: flex; gap: 10px; margin: 30px 0; border-top: 1px solid #eee; padding-top: 20px; }
-        .share-btn { padding: 10px 20px; border-radius: 5px; text-decoration: none; color: white; font-weight: bold; font-size: 0.9em; }
+        .share-bar { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 40px 0; }
+        .share-btn { padding: 10px 18px; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; font-size: 0.9em; display: flex; align-items: center; gap: 8px; }
         .whatsapp { background: #25D366; }
-        .facebook { background: #4267B2; }
+        .print-btn { background: #666; }
 
-        .points-box { background: #fff3cd; padding: 25px; border-radius: 12px; border-right: 6px solid #ffc107; }
+        .points-box { background: #fff9e6; padding: 30px; border-radius: 12px; border: 1px solid #ffeeba; margin-top: 50px; }
+        .points-box h2 { border: none; padding: 0; margin-top: 0; }
+        ul { padding-right: 20px; }
+        li { margin-bottom: 15px; font-weight: 700; color: #554; }
+
+        strong { color: var(--primary); font-size: 1.1em; }
     </style>
 </head>
 <body>
@@ -49,56 +54,65 @@
     <article class="main-content">
         <img src="2005-04-copy-Custom.jpg" alt="דירה בתחתונים" class="article-image">
         
-        <span class="meta"><i class="fas fa-clock"></i> זמן קריאה: 6 דקות</span>
+        <span class="meta"><i class="fas fa-clock"></i> זמן קריאה משוער: 8 דקות</span>
         <h1>דירה בתחתונים</h1>
 
         <div class="share-bar">
-            <span>שתפו את המאמר:</span>
-            <a href="https://api.whatsapp.com/send?text=קראו את המאמר 'דירה בתחתונים' מבית נקודת חיים: " target="_blank" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i> וואטסאפ</a>
-            <a href="#" onclick="window.print()" class="share-btn" style="background:#666;"><i class="fas fa-print"></i> הדפסה / שמירה</a>
+            <a href="https://api.whatsapp.com/send?text=מרתק! קראו את המאמר 'דירה בתחתונים' מבית נקודת חיים: " target="_blank" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i> שיתוף בוואטסאפ</a>
+            <a href="#" onclick="window.print()" class="share-btn print-btn"><i class="fas fa-print"></i> הדפסה ושמירה</a>
         </div>
 
         <h2><i class="fas fa-route vector-icon"></i>יוצאים לדרך</h2>
-        <p>ביום יו"ד בשבט תשי"א נשא הרבי מלובביץ' (רבי מנחם מענדל שניאורסאהן) את נאום היכנסו לתפקיד הנשיא החדש...</p>
-        <p>מאמר זה חורג מהיותו תיעוד של תנועה או הצהרת כוונות גרידא - הוא מגלם את סיפורו של דור שלם...</p>
+        <p>ביום יו"ד בשבט תשי"א נשא הרבי מלובביץ' (רבי מנחם מענדל שניאורסאהן) את נאום היכנסו לתפקיד הנשיא החדש של חסידות חב"ד, הוא השביעי בשושלת האדמורי"ם. לפניו היה חותנו הרבי הריי"צ (רבי יוסף יצחק שניאורסאהן) שנפטר שנה לפני כן, הרבי קיבל את התפקיד באמירת מאמר חסידות שהתחיל כתחילתו של המאמר האחרון של הריי"צ ובהמשכו עסק בהקשר לדורנו אנו, היכן אנו אוחזים בשרשרת הדורות, מהי המטרה ואיך מגשימים אותה?.</p>
+        <p>מאמר זה חורג מהיותו תיעוד של תנועה או הצהרת כוונות גרידא - הוא מגלם את סיפורו של דור שלם. הרבי, שרעיונותיו ומהפכותיו יעצבו בעתיד את פני הדור כולו, מוסר בשעה זו, בבית מדרש צנוע ובפני קומץ חסידים, את המסר המרכזי: "באתי לגני אחותי כלה".</p>
 
         <h2><i class="fas fa-brain vector-icon"></i>העמקה</h2>
         <p><strong>באתי לגני</strong><br>
-        בשיר השירים כתוב (ה,א):"בָּאתִי לְגַנִּי אֲחוֹתִי כַלָּה", המדרש רבה במקום מסביר כי הפסוק הזה מדבר על היום בו הוקם המשכן...</p>
-        
+        בשיר השירים כתוב (ה,א):"בָּאתִי לְגַנִּי אֲחוֹתִי כַלָּה", המדרש רבה במקום מסביר כי הפסוק הזה מדבר על היום בו הוקם המשכן, ומדייק בניסוח המשורר "לְגַנִּי" - המקום הזה איננו זר לי משום שכבר שכנתי פה. וכך מספר לנו המדרש: אלוקים שכן לאחר בריאת העולם בעולמנו, וחטאו של אדם הראשון - "חטא עץ הדעת" גרם לשכינה האלוקית ששרתה בעולם להסתלק ממנו ולעבור לשכון בעולם רוחני גבוה ומזוכך יותר, וכך חטאיהם של הדורות שבאו לאחר מכן גרמו לסילוקה של השכינה מעולם לעולם גבוה יותר. החטאים גרמו לבורא כביכול לא להרגיש בנוח כאן.</p>
+        <p>בהמשך מספר המדרש שלאחר שנים היו שבעה צדיקים שהצליחו במשך שבעה דורות להחזיר את נוכחות השכינה לעולם. כל אחד הוריד אותה עולם אחד, ומשה רבינו - הצדיק השביעי הוריד אותה חזרה אלינו- לעולמנו כך שתשרה בבית המקדש, ועל כך שורר שלמה המלך בשיר השירים "בָּאתִי לְגַנִּי אֲחוֹתִי כַלָּה".</p>
+
         <p><strong>גן או ג'ונגל?</strong><br>
-        מתיאור השתלשלות הדברים במדרש עולה כי התנהגותנו כאן תביא את חזרתו בגלוי של אלוקים לעולמנו...</p>
+        מתיאור השתלשלות הדברים במדרש עולה כי התנהגותנו כאן תביא את חזרתו בגלוי של אלוקים לעולמנו. וכשזה יקרה אזי העולם יראה כ"גן" ולא עוד כג'ונגל פרוע, הסדר יחזור על כנו והעולם יחדל מהתנהגות כאוטית. תורת החסידות מגלה כאן רובד נוסף בדברים; בלשון המדרש נכתב כי "עיקר שכינה בתחתונים הייתה", משמעות הדברים היא כי 'עיקר השכינה' - הדרגא הגבוהה והראשונית ברצונו של הקב"ה לברוא עולמות, חפצה להיות דווקא בתחתונים - עולמנו הגשמי. אך מדוע הדרגא הגבוהה ביותר בחרה לשכון דווקא בעולם הנמוך ביותר? בכדי להבין זאת נזדקק קודם לענות על השאלה הקיומית שלנו והיא: למה נברא העולם?</p>
 
         <p><strong>למה נוצרנו?!</strong><br>
-        זוהי ללא ספק שאלה שמעסיקה רבים מאיתנו, מפני שאם נבין מדוע נוצרנו, נוכל גם להבין מה עלינו לעשות כאן...</p>
+        זוהי ללא ספק שאלה שמעסיקה רבים מאיתנו, מפני שאם נבין מדוע נוצרנו, נוכל גם להבין מה עלינו לעשות כאן. ספר הזוהר (חלק ב, מב,ב) הוא בין הראשונים שבכתבי עמנו ששואל את השאלה הזו. עד אז שאלו "איך?" - כיצד לנהוג ומה עלינו לעשות, הוא גם שאל "מה?"- מה היא מטרת בריאתנו ובריאת העולמות בכלל, ומביא כי המטרה היא "בגין דישתמודעון ליה" - בכדי שיכירו אותו, נבראים אשר מנותקים ממנו יכירו בגדלותו ורוממותו של הבורא.</p>
+        <p>תורת החסידות (הרש"ב - רבי שלום דוב בער – האדמו"ר החמישי, תרס"ו, יו"ט של ר"ה) מתייחסת לטעם הבריאה אשר מביא הזוהר, וטוענת כי הוא מספק תשובה לבריאתם של עולמות עליונים, אך אינו מגלה לנו את המטרה האמיתית שבגינה נברא העולם שלנו- הפיסי - הגשמי, משום שעולמנו איננו מגלה את שלימות כוחות הבורא. ואף יתרה מזו, הוא מסתיר עליהם.</p>
 
         <img src="Lubavitcher Rebbe (24).JPG" alt="הרבי מלובביץ'" class="inner-img">
         <div class="image-caption">הרבי מלובביץ'</div>
 
         <h2>דירה בתחתונים</h2>
-        <p>אדמו"ר הזקן בספרו 'תניא' (פרק לו) מביא את מאמר חכמינו ממדרש תנחומא "בְּשָׁעָה שֶׁבָּרָא הַקָּדוֹשׁ בָּרוּךְ הוּא אֶת הָעוֹלָם, נִתְאַוָּה שֶׁיְּהֵא לוֹ דִּירָה בַּתַּחְתּוֹנִים..."</p>
+        <p>אדמו"ר הזקן בספרו 'תניא' (פרק לו) מביא את מאמר חכמינו ממדרש תנחומא (נשא ט"ז, וכן בחוקותי, ג) "בְּשָׁעָה שֶׁבָּרָא הַקָּדוֹשׁ בָּרוּךְ הוּא אֶת הָעוֹלָם, נִתְאַוָּה שֶׁיְּהֵא לוֹ דִּירָה בַּתַּחְתּוֹנִים כְּמוֹ שֶׁיֵּשׁ בָּעֶלְיוֹנִים." הוא מביא את המדרש הזה להבנה הבסיסית לרצון הא-ל בעולם שלנו. מטרת בריאתו מפני שנתאווה - תאווה החזקה מן השכל, שבעולם שלנו תהיה לו דירה.</p>
+        <p>ואף מכאן הוא מכריח לומר שהמטרה שלשמה נבראו העולמות כולם הוא בשביל שכאן בעולם שלנו תיעשה לו דירה. ה'עולמות העליונים' הגם שהם קדושים וטהורים, והשכינה מאירה בהם בגלוי ובצורה טהורה, עדיין עצם בריאתם היא ירידה באין ערוך של אור אין סוף האלוקי כפי שהוא מאיר למעלה מעולמות אלו. ואם כן הם אינם מטרת הבריאה.</p>
+
+        <p><strong>למה אנחנו מרגישים מעצמנו?</strong><br>
+        עולם המעשה, הוא המקום היחיד אשר לא רק שאינו מבטא זאת אלא אף מסתיר על כך, ומראה עצמו כמציאות עצמאית. העולם הזה דוגל בשיטת ה'יש' - ככל שאדם מחזיק יותר בערכים עמוקים ובביטול העצמי לטובת האמת הרוחנית, כך הוא נתפס כתמים, מיושן או לא מעשי. לעומת זאת, ה'מצליח' בעיני העולם הוא דווקא מי שמאמין בעצמו וביכולותיו האישיות.</p>
 
         <div class="source-box">
-            מתוך המאמר: "והנה רבנו הזקן מבאר בזה אשר תכלית השתלשלות העולמות וירידתם אינו בשביל עולמות העליונים... אלא שהתכלית הוא עוה"ז התחתון ... ע"י עבודה בו נתגלה העצמות."
+            <strong>מתוך המאמר:</strong><br>
+            "והנה רבנו הזקן מבאר בזה אשר תכלית השתלשלות העולמות וירידתם אינו בשביל עולמות העליונים... שהרי גם עולם האצילות הוא גילוי ההעלם ואם כן זהו ירידה מאור פניו יתברך, כי כשהיו אורות האצילות בהעלמם היו במדריגה גבוה הרבה יותר, אלא שהתכלית הוא עוה"ז התחתון ... וע"י העבודה בו, ע"י אתכפיא ואתהפכא, נתגלה העצמות, בשבילו היה בריאת והשתלשלות העולמות."
         </div>
 
         <h2>ההבדל בין גילוי לעצם</h2>
-        <p>מה באמת יצר את ההבדלים בין העולמות?, ומדוע דווקא החיסרון שלנו מגלה מהות פנימית יותר בהוויתנו?...</p>
+        <p>מה באמת יצר את ההבדלים בין העולמות?, ומדוע דווקא החיסרון שלנו מגלה מהות פנימית יותר בהוויתנו? כדי להבין זאת, נצטרך להבין תחילה את ההבדל הפשוט בין יחסו של אדם ל'בנו' או ל'תלמידו'.</p>
+        <p>תלמיד טוב, הוא כזה שמגלה את רבו. בן לעומת זאת לא חייב לדעת מה אביו חושב. פעמים אף ייתכן כי ילך נגד מחשבת אביו, אך לא בכך הוא מבטא את אביו. הקשר של התלמיד לרבו נבחן ברמת ביטולו, הבן אינו תלוי בכך. הסיבה לדבר כי סוג היחסים שבין התלמיד לרבו הם יחסי גילוי, והיחסים שבין אב לבנו הם עצמיים - הוא חלק ממנו.</p>
+        <p>עולמנו נברא בכח העצמות של הבורא יתברך, הוא הטביע בבריאתו את עצמותו, ואנו כמו בנים טובים "קיבלנו את הגנים" שלו. היות והוא היש והמציאות היחידה האמיתית, לכן גם אנו חווים את אותה הרגשה - מציאות גשמית שמרגישה כישות נפרדת. ורצון הא-ל הוא שתגלה זאת, שתגלה את המציאות העצמאית הזו בתוכך ואת הקשר הטבוע בקרבך!</p>
 
         <h2>משימת דורנו</h2>
-        <p>הרבי במאמר מתייחס ליחודיותו של הדור שלנו. על המנהיג השביעי, זה שהחזיר את השכינה כאן למטה- משה, נכתב כי "כל השביעין חביבין"...</p>
+        <p>הרבי במאמר מתייחס ליחודיותו של הדור שלנו. על המנהיג השביעי, זה שהחזיר את השכינה כאן למטה- משה, נכתב כי "כל השביעין חביבין". דורנו איננו יותר טוב מהדורות שקדמו לו, אך אנו, בשונה מהם, נבחרנו להשלים את המשימה שלשמה נבראו העולמות כולם. מחכים לנו כבר מאדם הראשון ואף לפני כן משחר הבריאה כולה!</p>
 
         <h2><i class="fas fa-book vector-icon"></i>סיפור</h2>
         <img src="Apollo_8_Crewmembers_-_GPN-2000-001125.jpg" alt="אפולו 8" class="inner-img">
         <div class="image-caption">אפולו 8 מתוך ויקיפדיה</div>
         <p><strong>אפולו 8</strong><br>
-        בשנת 1968 התקיים סימפוזיון שערכו שלוחי חב"ד בקמפוס לקבוצת סטודנטים... הרבי למד מהסיפור הוראה בחיינו: הכל רגיש, וכל פרט שיעשה אחרת עלול לסכן את הצלחת הפרוייקט כולו.</p>
+        בשנת 1968 התקיים סימפוזיון שערכו שלוחי חב"ד בקמפוס לקבוצת סטודנטים. אחת מהשאלות שעלו היתה: מדוע התורה מתערבת בדברים פרטיים שאדם עושה בביתו? הרבי ענה דרך סיפור חללית אפולו 8. הושקע בזה הון עתק והורו לאסטרונאוטים בדיוק כיצד לנהוג בכל רגע. שם אף אחד לא יחליט שהוא משנה מהכללים, כי הכל רגיש וכל פרט קטן עלול לסכן את הפרויקט כולו.</p>
+        <p>כך גם אצלנו: הפעולה הקטנה שלך משנה בכל העולמות. המטרה היא השכנת השכינה כאן בעולם, וכל מעשה קטן של יהודי הוא חלק מהצלחת הפרויקט האלוקי האדיר הזה.</p>
 
         <div class="points-box">
             <h2><i class="fas fa-lightbulb vector-icon"></i>נקודות למחשבה</h2>
             <ul>
-                <li>כיצד עלינו להחזיר את אלוקים כך שיהא נוכח בעולמנו באופן השלם?</li>
-                <li>כיצד נוכל לבטא את היותנו בנים של ה' בצורה הטובה ביותר?</li>
+                <li>כיצד עלינו להחזיר את אלוקים כך שיהא נוכח בעולמנו באופן השלם שירגיש כאן כאילו זהו ביתו?</li>
+                <li>כיצד נוכל לבטא את היותנו בנים של ה' בצורה הטובה ביותר שיראו עלינו שאכן אנו בניו?</li>
                 <li>כיצד אנו מחזירים את השיח על הבורא לחברה שלנו?</li>
             </ul>
         </div>
@@ -107,7 +121,7 @@
     <aside class="side-quote">
         "בָּאתִי לְגַנִּי אֲחֹתִי כַלָּה"
         <br>
-        <small style="font-size: 0.5em; color: #666;">שיר השירים ה,א</small>
+        <small style="font-size: 0.5em; color: #666; font-family: sans-serif;">שיר השירים ה,א</small>
     </aside>
 </div>
 
