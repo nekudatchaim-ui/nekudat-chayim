@@ -46,8 +46,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
-            color: #667eea;
+            overflow: hidden;
+        }
+        
+        .logo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         h1 {
@@ -102,16 +107,16 @@
             width: 100%;
             max-width: 1000px;
             height: 500px;
-            background: #ddd;
             margin: 2rem auto;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: #666;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .content-wrapper {
@@ -222,15 +227,16 @@
         .image-placeholder {
             width: 100%;
             max-width: 600px;
-            height: 400px;
-            background: #e9ecef;
             margin: 2rem auto;
             border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            font-size: 1.2rem;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .image-placeholder img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .thinking-points {
@@ -281,7 +287,7 @@
         <div class="container">
             <div class="logo">
                 <div class="logo-placeholder">
-                    <i class="fas fa-fire"></i>
+                    <img src="https://raw.githubusercontent.com/nekudatchaim-ui/nekudat-chayim/main/סמל%20נקודת%20חיים%20באש%20העמוד%20-%20סמל%20לאתר.png" alt="סמל נקודת חיים">
                 </div>
             </div>
             <h1>דירה בתחתונים</h1>
@@ -310,7 +316,7 @@
 
     <div class="container">
         <div class="hero-image">
-            תמונה ראשית - 2005-04-copy-Custom.jpg
+            <img src="https://raw.githubusercontent.com/nekudatchaim-ui/nekudat-chayim/main/תמונה%20למאמר%20-2005-04-copy-Custom.jpg" alt="תמונה למאמר">
         </div>
     </div>
 
@@ -355,7 +361,7 @@
                 <p>תורת החסידות (הרש"ב - רבי שלום דוב בער – האדמו"ר החמישי, תרס"ו, יו"ט של ר"ה) מתייחסת לטעם הבריאה אשר מביא הזוהר, וטוענת כי הוא מספק תשובה לבריאתם של עולמות עליונים, אך אינו מגלה לנו את המטרה האמיתית שבגינה נברא העולם שלנו- הפיסי - הגשמי, משום שעולמנו איננו מגלה את שלימות כוחות הבורא. ואף יתרה מזו, הוא מסתיר עליהם. אם ברצון האדם להגיע להכרה במציאות הא-ל נדרשת ממנו מחשבה והתבוננות רבה. וגם אם יבין זהו הרי מעט מאוד לעומת עומק המחשבה האלוקית שעליה כבר נאמר: "כי לא מחשבותי מחשבותיכם".</p>
 
                 <div class="image-placeholder">
-                    Lubavitcher Rebbe (24).JPG
+                    <img src="https://raw.githubusercontent.com/nekudatchaim-ui/nekudat-chayim/main/Lubavitcher%20Rebbe%20(24).JPG" alt="הרבי מלובביץ'">
                 </div>
                 <div class="image-caption">הרבי מלובביץ'</div>
 
@@ -422,7 +428,7 @@
                 </div>
 
                 <div class="image-placeholder">
-                    Apollo_8_Crewmembers_-_GPN-2000-001125.jpg
+                    <img src="https://raw.githubusercontent.com/nekudatchaim-ui/nekudat-chayim/main/Apollo_8_Crewmembers_-_GPN-2000-001125.jpg" alt="אפולו 8">
                 </div>
                 <div class="image-caption">אפולו 8 מתוך ויקיפדיה</div>
 
