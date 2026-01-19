@@ -277,6 +277,34 @@
             font-size: 1.2rem;
             margin-bottom: 1rem;
         }
+        
+        .comment-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-right: 4px solid #667eea;
+        }
+        
+        .comment-author {
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .comment-date {
+            font-size: 0.9rem;
+            color: #999;
+            margin-bottom: 0.5rem;
+        }
+        
+        .comment-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #2c3e50;
+        }
 
         @media (max-width: 1024px) {
             .content-wrapper {
@@ -376,6 +404,11 @@
         <div></div>
         
         <main>
+            <div class="quote-box" style="margin-bottom: 3rem;">
+                בָּאתִי לְגַנִּי אֲחֹתִי כַלָּה
+                <div style="font-size: 1rem; margin-top: 1rem; opacity: 0.8;">שיר השירים ה,א</div>
+            </div>
+
             <div class="section">
                 <div class="section-header">
                     <div class="section-icon">❤️</div>
@@ -510,17 +543,36 @@
                 
                 <p>כיצד אנו מחזירים את השיח על הבורא לחברה שלנו?</p>
             </div>
+
+            <div class="section" style="margin-top: 4rem;">
+                <div class="section-header">
+                    <div class="section-icon" style="color: #667eea;">💬</div>
+                    <h2>תגובות</h2>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; text-align: center;">
+                    <p style="margin-bottom: 1.5rem; font-size: 1.2rem;">נשמח לשמוע את המחשבות והתגובות שלכם על המאמר</p>
+                    <input type="text" id="commentName" placeholder="שם (אופציונלי)" style="width: 100%; padding: 1rem; border: 2px solid #ddd; border-radius: 10px; font-family: 'Assistant', sans-serif; font-size: 1.1rem; margin-bottom: 1rem;">
+                    <textarea id="commentBox" placeholder="כתבו את התגובה שלכם כאן..." style="width: 100%; min-height: 120px; padding: 1rem; border: 2px solid #ddd; border-radius: 10px; font-family: 'Assistant', sans-serif; font-size: 1.1rem; resize: vertical;"></textarea>
+                    <button onclick="submitComment()" style="margin-top: 1rem; padding: 1rem 3rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 25px; font-size: 1.1rem; cursor: pointer; font-weight: 600;">שלח תגובה</button>
+                </div>
+                
+                <div id="commentsSection" style="margin-top: 2rem;">
+                    <!-- תגובות יופיעו כאן -->
+                </div>
+            </div>
         </main>
 
         <div class="sidebar-right">
-            <div class="quote-box">
-                בָּאתִי לְגַנִּי אֲחֹתִי כַלָּה
-                <div style="font-size: 1rem; margin-top: 1rem; opacity: 0.8;">שיר השירים ה,א</div>
-            </div>
         </div>
     </div>
 
     <script>
+        // טעינת תגובות בעת טעינת הדף
+        window.addEventListener('DOMContentLoaded', async function() {
+            await displayComments();
+        });
+        
         function shareArticle() {
             if (navigator.share) {
                 navigator.share({
@@ -530,6 +582,94 @@
                 }).catch(err => console.log('Error sharing:', err));
             } else {
                 alert('שיתוף לא נתמך בדפדפן זה. אפשר להעתיק את כתובת האתר.');
+            }
+        }
+
+        async function submitComment() {
+            const commentBox = document.getElementById('commentBox');
+            const commentName = document.getElementById('commentName');
+            const commentText = commentBox.value.trim();
+            const authorName = commentName.value.trim() || 'אורח';
+            
+            if (commentText === '') {
+                alert('אנא כתבו תגובה לפני השליחה');
+                return;
+            }
+            
+            try {
+                // יצירת תגובה חדשה
+                const newComment = {
+                    author: authorName,
+                    text: commentText,
+                    date: new Date().toLocaleString('he-IL', { 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    }),
+                    timestamp: Date.now()
+                };
+                
+                // קבלת תגובות קיימות
+                let comments = [];
+                try {
+                    const result = await window.storage.get('article-comments', true);
+                    if (result && result.value) {
+                        comments = JSON.parse(result.value);
+                    }
+                } catch (error) {
+                    // אם אין תגובות קיימות, זה בסדר
+                    comments = [];
+                }
+                
+                // הוספת התגובה החדשה
+                comments.unshift(newComment);
+                
+                // שמירת כל התגובות (shared=true כדי שכולם יראו)
+                await window.storage.set('article-comments', JSON.stringify(comments), true);
+                
+                // ניקוי השדות
+                commentBox.value = '';
+                commentName.value = '';
+                
+                // הצגת התגובות מחדש
+                await displayComments();
+                
+                alert('תודה על התגובה! התגובה שלך נוספה בהצלחה ✨');
+            } catch (error) {
+                console.error('שגיאה בשמירת התגובה:', error);
+                alert('מצטערים, הייתה בעיה בשמירת התגובה. נסו שוב.');
+            }
+        }
+        
+        async function displayComments() {
+            const commentsSection = document.getElementById('commentsSection');
+            
+            try {
+                // קבלת תגובות מהאחסון המשותף
+                const result = await window.storage.get('article-comments', true);
+                let comments = [];
+                
+                if (result && result.value) {
+                    comments = JSON.parse(result.value);
+                }
+                
+                if (comments.length === 0) {
+                    commentsSection.innerHTML = '<p style="text-align: center; color: #999; padding: 2rem;">עדיין אין תגובות. היו הראשונים להגיב!</p>';
+                    return;
+                }
+                
+                commentsSection.innerHTML = comments.map(comment => `
+                    <div class="comment-item">
+                        <div class="comment-author">${comment.author}</div>
+                        <div class="comment-date">${comment.date}</div>
+                        <div class="comment-text">${comment.text}</div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('שגיאה בטעינת תגובות:', error);
+                commentsSection.innerHTML = '<p style="text-align: center; color: #999; padding: 2rem;">עדיין אין תגובות. היו הראשונים להגיב!</p>';
             }
         }
     </script>
