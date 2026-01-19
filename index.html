@@ -3,50 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>נקודת חיים - הפצת מעיינות החסידות</title>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>דירה בתחתונים - נקודת חיים</title>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&family=Suez+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Assistant', sans-serif; margin: 0; background-color: #f9f9f9; color: #333; line-height: 1.6; }
-        header { background: #fff; padding: 20px; text-align: center; border-bottom: 3px solid #007bff; }
-        .container { max-width: 800px; margin: auto; padding: 20px; }
-        .card { background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-top: 20px; }
-        .reading-time { color: #888; font-size: 0.9em; margin-bottom: 10px; display: block; }
-        h1 { color: #007bff; }
-        .quote { font-size: 1.4em; font-style: italic; border-right: 5px solid #007bff; padding-right: 15px; margin: 30px 0; color: #555; }
-        .cta-button { display: inline-block; background: #25D366; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 20px; }
-        .social-links { text-align: center; margin-top: 40px; }
-        .social-links a { margin: 0 10px; text-decoration: none; color: #007bff; font-weight: bold; }
+        :root { --primary: #1a5f7a; --accent: #d9534f; --bg: #f4f7f6; }
+        body { font-family: 'Assistant', sans-serif; margin: 0; background-color: var(--bg); color: #333; line-height: 1.8; }
+        header { background: #fff; padding: 20px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo { max-width: 150px; height: auto; }
+        
+        .container { max-width: 900px; margin: 20px auto; padding: 20px; display: grid; grid-template-columns: 3fr 1fr; gap: 30px; }
+        @media (max-width: 768px) { .container { grid-template-columns: 1fr; } .side-quote { display: none; } }
+
+        .main-content { background: #fff; padding: 40px; border-radius: 15px; box-shadow: 0 4px 25px rgba(0,0,0,0.05); }
+        .article-image { width: 100%; border-radius: 12px; margin-bottom: 25px; }
+        
+        h1 { font-family: 'Suez One', serif; color: var(--primary); font-size: 2.8em; margin-bottom: 10px; }
+        .meta { color: var(--accent); font-weight: bold; margin-bottom: 30px; display: flex; align-items: center; gap: 10px; }
+        
+        h2 { color: var(--primary); border-right: 4px solid var(--primary); padding-right: 15px; margin-top: 40px; font-size: 1.8em; }
+        .vector-icon { font-size: 1.2em; margin-left: 10px; color: var(--primary); }
+        
+        .side-quote { font-family: 'Suez One', serif; font-size: 1.5em; color: var(--primary); padding: 20px; border-right: 2px solid #ddd; height: fit-content; sticky: top; top: 20px; }
+        
+        .source-box { background: #f9f9f9; border: 1px dashed #ccc; padding: 25px; margin: 30px 0; font-family: 'Georgia', serif; font-style: italic; font-size: 1.1em; line-height: 1.6; }
+        
+        .image-caption { text-align: center; font-size: 0.9em; color: #666; margin-top: -15px; margin-bottom: 25px; }
+        .inner-img { width: 100%; border-radius: 10px; margin: 20px 0; }
+
+        .share-bar { display: flex; gap: 10px; margin: 30px 0; border-top: 1px solid #eee; padding-top: 20px; }
+        .share-btn { padding: 10px 20px; border-radius: 5px; text-decoration: none; color: white; font-weight: bold; font-size: 0.9em; }
+        .whatsapp { background: #25D366; }
+        .facebook { background: #4267B2; }
+
+        .points-box { background: #fff3cd; padding: 25px; border-radius: 12px; border-right: 6px solid #ffc107; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>נקודת חיים</h1>
-    <p>להנגיש את אור החסידות לכל יהודי</p>
+    <img src="סמל לאתר.png" alt="נקודת חיים" class="logo">
 </header>
 
 <div class="container">
-    <div class="card">
-        <span class="reading-time">⏱️ זמן קריאה: 3 דקות</span>
-        <h2>כותרת המאמר החדש שלכם</h2>
-        <p>כאן יבוא תוכן המאמר שלכם. תוכלו להוסיף תמונות וטקסט בצורה נוחה...</p>
+    <article class="main-content">
+        <img src="2005-04-copy-Custom.jpg" alt="דירה בתחתונים" class="article-image">
         
-        <div class="quote">
-            "מעט אור דוחה הרבה מן החושך"
+        <span class="meta"><i class="fas fa-clock"></i> זמן קריאה: 6 דקות</span>
+        <h1>דירה בתחתונים</h1>
+
+        <div class="share-bar">
+            <span>שתפו את המאמר:</span>
+            <a href="https://api.whatsapp.com/send?text=קראו את המאמר 'דירה בתחתונים' מבית נקודת חיים: " target="_blank" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i> וואטסאפ</a>
+            <a href="#" onclick="window.print()" class="share-btn" style="background:#666;"><i class="fas fa-print"></i> הדפסה / שמירה</a>
         </div>
 
-        <p>המשך המאמר כאן...</p>
+        <h2><i class="fas fa-route vector-icon"></i>יוצאים לדרך</h2>
+        <p>ביום יו"ד בשבט תשי"א נשא הרבי מלובביץ' (רבי מנחם מענדל שניאורסאהן) את נאום היכנסו לתפקיד הנשיא החדש...</p>
+        <p>מאמר זה חורג מהיותו תיעוד של תנועה או הצהרת כוונות גרידא - הוא מגלם את סיפורו של דור שלם...</p>
 
-        <center>
-            <a href="קישור-לקבוצת-הוואטסאפ-שלך" class="cta-button">הצטרפו לקהילת הוואטסאפ שלנו 💬</a>
-        </center>
-    </div>
+        <h2><i class="fas fa-brain vector-icon"></i>העמקה</h2>
+        <p><strong>באתי לגני</strong><br>
+        בשיר השירים כתוב (ה,א):"בָּאתִי לְגַנִּי אֲחוֹתִי כַלָּה", המדרש רבה במקום מסביר כי הפסוק הזה מדבר על היום בו הוקם המשכן...</p>
+        
+        <p><strong>גן או ג'ונגל?</strong><br>
+        מתיאור השתלשלות הדברים במדרש עולה כי התנהגותנו כאן תביא את חזרתו בגלוי של אלוקים לעולמנו...</p>
 
-    <div class="social-links">
-        <p>עקבו אחרינו:</p>
-        <a href="#">אינסטגרם</a> | <a href="#">יוטיוב</a> | <a href="#">טיקטוק</a>
-    </div>
+        <p><strong>למה נוצרנו?!</strong><br>
+        זוהי ללא ספק שאלה שמעסיקה רבים מאיתנו, מפני שאם נבין מדוע נוצרנו, נוכל גם להבין מה עלינו לעשות כאן...</p>
+
+        <img src="Lubavitcher Rebbe (24).JPG" alt="הרבי מלובביץ'" class="inner-img">
+        <div class="image-caption">הרבי מלובביץ'</div>
+
+        <h2>דירה בתחתונים</h2>
+        <p>אדמו"ר הזקן בספרו 'תניא' (פרק לו) מביא את מאמר חכמינו ממדרש תנחומא "בְּשָׁעָה שֶׁבָּרָא הַקָּדוֹשׁ בָּרוּךְ הוּא אֶת הָעוֹלָם, נִתְאַוָּה שֶׁיְּהֵא לוֹ דִּירָה בַּתַּחְתּוֹנִים..."</p>
+
+        <div class="source-box">
+            מתוך המאמר: "והנה רבנו הזקן מבאר בזה אשר תכלית השתלשלות העולמות וירידתם אינו בשביל עולמות העליונים... אלא שהתכלית הוא עוה"ז התחתון ... ע"י עבודה בו נתגלה העצמות."
+        </div>
+
+        <h2>ההבדל בין גילוי לעצם</h2>
+        <p>מה באמת יצר את ההבדלים בין העולמות?, ומדוע דווקא החיסרון שלנו מגלה מהות פנימית יותר בהוויתנו?...</p>
+
+        <h2>משימת דורנו</h2>
+        <p>הרבי במאמר מתייחס ליחודיותו של הדור שלנו. על המנהיג השביעי, זה שהחזיר את השכינה כאן למטה- משה, נכתב כי "כל השביעין חביבין"...</p>
+
+        <h2><i class="fas fa-book vector-icon"></i>סיפור</h2>
+        <img src="Apollo_8_Crewmembers_-_GPN-2000-001125.jpg" alt="אפולו 8" class="inner-img">
+        <div class="image-caption">אפולו 8 מתוך ויקיפדיה</div>
+        <p><strong>אפולו 8</strong><br>
+        בשנת 1968 התקיים סימפוזיון שערכו שלוחי חב"ד בקמפוס לקבוצת סטודנטים... הרבי למד מהסיפור הוראה בחיינו: הכל רגיש, וכל פרט שיעשה אחרת עלול לסכן את הצלחת הפרוייקט כולו.</p>
+
+        <div class="points-box">
+            <h2><i class="fas fa-lightbulb vector-icon"></i>נקודות למחשבה</h2>
+            <ul>
+                <li>כיצד עלינו להחזיר את אלוקים כך שיהא נוכח בעולמנו באופן השלם?</li>
+                <li>כיצד נוכל לבטא את היותנו בנים של ה' בצורה הטובה ביותר?</li>
+                <li>כיצד אנו מחזירים את השיח על הבורא לחברה שלנו?</li>
+            </ul>
+        </div>
+    </article>
+
+    <aside class="side-quote">
+        "בָּאתִי לְגַנִּי אֲחֹתִי כַלָּה"
+        <br>
+        <small style="font-size: 0.5em; color: #666;">שיר השירים ה,א</small>
+    </aside>
 </div>
+
+<footer style="text-align: center; padding: 40px; color: #888;">
+    &copy; כל הזכויות שמורות לפרויקט 'נקודת חיים'
+</footer>
 
 </body>
 </html>
